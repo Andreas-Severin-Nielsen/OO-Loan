@@ -29,7 +29,7 @@ namespace OO_Loan
             if (selectedUser == 0) return;
             selectedUser--; // zero index correction
 
-            List<Unit> units = loanManager.GetAvailableUnits();
+            List<IUnit> units = loanManager.GetAvailableUnits();
             MenuSelection unitSelection = new MenuSelection();
             unitSelection.Headline = "Vælg enhed";
             unitSelection.SelectionMessage = "Vælg enheden fra følgende ledige enheder";
@@ -47,7 +47,7 @@ namespace OO_Loan
 
         internal void EndLoan()
         {
-            List<Unit> units = loanManager.GetLoanedUnits();
+            List<IUnit> units = loanManager.GetLoanedUnits();
             MenuSelection loanSelection = new MenuSelection();
             loanSelection.Headline = "Vælg lån";
             loanSelection.SelectionMessage = "Vælg returneret enhed fra listen";

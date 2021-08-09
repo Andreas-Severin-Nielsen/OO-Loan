@@ -70,9 +70,9 @@ namespace OO_Loan
         /// Adds a list of units, where each unit is an option in the menu
         /// </summary>
         /// <param name="units">List of units</param>
-        internal void AddOption(List<Unit> units)
+        internal void AddOption(List<IUnit> units)
         {
-            foreach (Unit u in units)
+            foreach (IUnit u in units)
                 AddOption(u.GetDesignation());
         }
 

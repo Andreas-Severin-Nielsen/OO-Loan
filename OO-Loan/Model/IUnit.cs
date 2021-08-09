@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OO_Loan
 {
-    interface Unit
+    interface IUnit
     {
         /// <summary>
         /// Returns the units ID

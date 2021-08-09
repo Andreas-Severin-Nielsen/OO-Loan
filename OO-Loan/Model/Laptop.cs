@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OO_Loan
 {
-    class Laptop : Unit
+    class Laptop : IUnit
     {
         private string id;
         private int numberOfLendings;

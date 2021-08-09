@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace OO_Loan
 {
     /// <summary>
-    /// Console user interface for Unit management
+    /// Console user interface for IUnit management
     /// </summary>
     class UnitScreen
     {
@@ -21,7 +21,7 @@ namespace OO_Loan
 
         internal void Service()
         {
-            List<Unit> units = unitManager.GetUnitsForService();
+            List<IUnit> units = unitManager.GetUnitsForService();
             MenuSelection unitSelection = new MenuSelection();
             unitSelection.Headline = "Vælg Enhed";
             unitSelection.SelectionMessage = "Vælg den enhed der udføres vedligeholdelse på";
@@ -64,7 +64,7 @@ namespace OO_Loan
             MenuSelection menuSelection = new MenuSelection();
             menuSelection.Headline = "Vælg Enhed";
             menuSelection.SelectionMessage = "Vælg den enhed der skal fjernes fra systemet";
-            List<Unit> units = unitManager.GetAllunits();
+            List<IUnit> units = unitManager.GetAllunits();
             menuSelection.AddOption(units);
             int selection = menuSelection.RequestSelection();
             if (selection == 0) return;

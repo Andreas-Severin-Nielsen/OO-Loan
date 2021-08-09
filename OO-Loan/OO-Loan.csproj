@@ -50,7 +50,7 @@
     <Compile Include="Model\Laptop.cs" />
     <Compile Include="Model\School.cs" />
     <Compile Include="Model\State.cs" />
-    <Compile Include="Model\Unit.cs" />
+    <Compile Include="Model\IUnit.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

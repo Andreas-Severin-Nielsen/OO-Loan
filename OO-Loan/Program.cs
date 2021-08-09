@@ -14,7 +14,10 @@ namespace OO_Loan
             LoanManager loanManager = new LoanManager(school);
             UnitManager unitManager = new UnitManager(school.Units);
             UserManager userManager = new UserManager(school.Users);
-            CreateSomeTestDate(unitManager, userManager); // Random data put into the system for test purposes
+
+            // Random data put into the system for test purposes. Can be omitted.
+            CreateSomeTestDate(unitManager, userManager);
+
             MainScreen mainScreen = new MainScreen(
                 school,
                 loanManager,

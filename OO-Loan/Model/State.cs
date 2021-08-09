@@ -7,11 +7,11 @@
         /// </summary>
         Free,
         /// <summary>
-        /// Unit is being loaned by a user
+        /// IUnit is being loaned by a user
         /// </summary>
         Lended,
         /// <summary>
-        /// Unit is reserved for maintenance
+        /// IUnit is reserved for maintenance
         /// </summary>
         Reserved
     }

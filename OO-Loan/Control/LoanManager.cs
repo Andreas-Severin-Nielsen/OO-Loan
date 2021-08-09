@@ -40,10 +40,10 @@ namespace OO_Loan
         /// Gets all units that can be loaned
         /// </summary>
         /// <returns>List of units</returns>
-        internal List<Unit> GetAvailableUnits()
+        internal List<IUnit> GetAvailableUnits()
         {
-            List<Unit> units = new List<Unit>();
-            foreach (Unit u in school.Units)
+            List<IUnit> units = new List<IUnit>();
+            foreach (IUnit u in school.Units)
             {
                 if (u.GetState() == State.Free) units.Add(u);
             }
@@ -54,8 +54,8 @@ namespace OO_Loan
         /// Creating a loan by registering connection within one user and one unit
         /// </summary>
         /// <param name="selectedUser">User loaning the unit</param>
-        /// <param name="selectedUnit">Unit the user is loaning</param>
-        internal void CreateLoan(User selectedUser, Unit selectedUnit)
+        /// <param name="selectedUnit">IUnit the user is loaning</param>
+        internal void CreateLoan(User selectedUser, IUnit selectedUnit)
         {
             selectedUser.RegisterLoan(selectedUnit);
             selectedUnit.RegisterLoan(selectedUser);
@@ -65,10 +65,10 @@ namespace OO_Loan
         /// Gets all units that are loaned by users
         /// </summary>
         /// <returns>List of loaned units</returns>
-        internal List<Unit> GetLoanedUnits()
+        internal List<IUnit> GetLoanedUnits()
         {
-            List<Unit> units = new List<Unit>();
-            foreach(Unit u in school.Units)
+            List<IUnit> units = new List<IUnit>();
+            foreach(IUnit u in school.Units)
             {
                 if (u.GetState() == State.Lended) units.Add(u);
             }
@@ -78,8 +78,8 @@ namespace OO_Loan
         /// <summary>
         /// Ending a loan by removing the connections within a user and a unit
         /// </summary>
-        /// <param name="unit">Unit that is returned by the user</param>
-        internal void EndLoan(Unit unit)
+        /// <param name="unit">IUnit that is returned by the user</param>
+        internal void EndLoan(IUnit unit)
         {
             unit.Getuser().Unit = null;
             unit.ReturnUnit();

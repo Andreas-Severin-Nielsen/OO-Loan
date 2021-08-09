@@ -16,7 +16,7 @@ namespace OO_Loan
         /// <summary>
         /// List of units registered in the school
         /// </summary>
-        public List<Unit> Units { get; set; }
+        public List<IUnit> Units { get; set; }
 
         /// <summary>
         /// List of users (loaners) registered in the school
@@ -30,7 +30,7 @@ namespace OO_Loan
         public School(string name)
         {
             Name = name;
-            Units = new List<Unit>();
+            Units = new List<IUnit>();
             Users = new List<User>();
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OO_Loan
 {
-    class Headset : Unit
+    class Headset : IUnit
     {
         private string id;
         private int numberOfLendings;

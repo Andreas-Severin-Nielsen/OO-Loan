@@ -21,9 +21,9 @@ namespace OO_Loan
         public string Name { get; set; }
 
         /// <summary>
-        /// Unit the user is loaning. Null if no loan is active for user
+        /// IUnit the user is loaning. Null if no loan is active for user
         /// </summary>
-        public Unit Unit { get; set; }
+        public IUnit Unit { get; set; }
 
         /// <summary>
         /// Constructing object of a user
@@ -40,8 +40,8 @@ namespace OO_Loan
         /// <summary>
         /// Registering the unit a user is loaning
         /// </summary>
-        /// <param name="selectedUnit">Unit the user is loaning</param>
-        internal void RegisterLoan(Unit selectedUnit)
+        /// <param name="selectedUnit">IUnit the user is loaning</param>
+        internal void RegisterLoan(IUnit selectedUnit)
         {
             Unit = selectedUnit;
         }

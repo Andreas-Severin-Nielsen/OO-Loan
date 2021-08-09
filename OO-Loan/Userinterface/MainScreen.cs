@@ -21,7 +21,7 @@ namespace OO_Loan
         /// </summary>
         /// <param name="school">School to be administrated by the loan system</param>
         /// <param name="loanManager">Loan controller</param>
-        /// <param name="unitManager">Unit Controller</param>
+        /// <param name="unitManager">IUnit Controller</param>
         /// <param name="userManager">User controller</param>
         public MainScreen(School school, LoanManager loanManager, UnitManager unitManager, UserManager userManager)
         {

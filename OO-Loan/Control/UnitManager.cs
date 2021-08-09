@@ -12,13 +12,13 @@ namespace OO_Loan
     class UnitManager
     {
         private int count;  // global counter for units
-        private List<Unit> units;
+        private List<IUnit> units;
 
         /// <summary>
         /// Creating object of the class UnitManager, using a list of units attached by Dependency Injection
         /// </summary>
         /// <param name="units">List of units</param>
-        public UnitManager(List<Unit> units)
+        public UnitManager(List<IUnit> units)
         {
             this.units = units;
             count = 0;
@@ -42,7 +42,7 @@ namespace OO_Loan
         public string CreateNewLaptop(string brand)
         {
             string id = "L" + NewID();
-            Unit unit = new Laptop(id, brand);
+            IUnit unit = new Laptop(id, brand);
             units.Add(unit);
             return unit.GetDesignation();
         }
@@ -54,7 +54,7 @@ namespace OO_Loan
         public string CreateNewHeadset()
         {
             string id = "H" + NewID();
-            Unit unit = new Headset(id);
+            IUnit unit = new Headset(id);
             units.Add(unit);
             return unit.GetDesignation();
         }
@@ -63,10 +63,10 @@ namespace OO_Loan
         /// Gets a list of all units reserved for service
         /// </summary>
         /// <returns>List of units to maintain</returns>
-        internal List<Unit> GetUnitsForService()
+        internal List<IUnit> GetUnitsForService()
         {
-            List<Unit> reserved = new List<Unit>();
-            foreach(Unit u in units)
+            List<IUnit> reserved = new List<IUnit>();
+            foreach(IUnit u in units)
             {
                 if (u.GetState() == State.Reserved) reserved.Add(u);
             }
@@ -76,8 +76,8 @@ namespace OO_Loan
         /// <summary>
         /// Registering that a unit has been maintained
         /// </summary>
-        /// <param name="unit">Unit that has been maintained</param>
-        internal void RegisterService(Unit unit)
+        /// <param name="unit">IUnit that has been maintained</param>
+        internal void RegisterService(IUnit unit)
         {
             unit.RegisterService(DateTime.Now);
         }
@@ -86,7 +86,7 @@ namespace OO_Loan
         /// Gets a list of all the units regardless of state
         /// </summary>
         /// <returns>List of units</returns>
-        internal List<Unit> GetAllunits()
+        internal List<IUnit> GetAllunits()
         {
             return units;
         }
@@ -97,7 +97,7 @@ namespace OO_Loan
         /// <param name="selection">Index of the unit to be removed from the list of units</param>
         internal void RemoveUnit(int selection)
         {
-            Unit unit = units[selection];
+            IUnit unit = units[selection];
             if (unit.Getuser() != null) unit.Getuser().Unit = null;
             units.Remove(unit);
         }
